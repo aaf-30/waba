@@ -1,0 +1,25 @@
+{
+  "name": "waba",
+  "version": "0.0.1",
+  "description": "WhatsApp Business API (WABA) wrapper for Node.js",
+  "main": "src/index.js",
+  "keywords": [
+    "waba",
+    "whatsapp",
+    "business",
+    "api",
+    "wrapper",
+    "node.js"
+  ],
+  "author": "Achmad Al Fandi",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaf-30/waba.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aaf-30/waba/issues"
+  },
+  "homepage": "https://github.com/aaf-30/waba#readme"
+}
