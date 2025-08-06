@@ -23,11 +23,10 @@ export default class WhatsAppAPI {
             });
             const data = await res.json();
             if (!res.ok) {
-                console.error(`❌ Error ${res.status}:`, data.error?.message || 'Pesan gagal dikirim');
+                throw new Error(`❌ Error ${res.status}: ${data.error?.message || 'Failed to send message.'}`);
             }
             return data;
         } catch (error) {
-            console.error('❌ Gagal melakukan request ke API:', error);
             throw error;
         }
     }

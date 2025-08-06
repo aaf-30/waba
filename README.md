@@ -2,7 +2,7 @@
 
 Node.js library that acts as a wrapper for the WhatsApp Business API, making it easier for you to create WhatsApp bots.
 
-**Note:** ⚠️ This project is still under active development, and some features may change.
+**Note:** This project is still under active development, and some features may change. Contributions are welcome! Please feel free to submit a pull request.
 
 ## Features
 
@@ -25,17 +25,18 @@ Here is a basic example of how to use this library:
 import { Client } from 'waba';
 
 const client = new Client({
-    port: 3000,
-    host: '127.0.0.1',
+    port: 3000, // optional, default is 3000
+    host: '127.0.0.1', // optional, default is '127.0.0.1'
+    phone_number_id: 'YOUR_PHONE_NUMBER_ID', // optional
     app_secret: 'YOUR_APP_SECRET',
     webhook_token: 'YOUR_WEBHOOK_VERIFY_TOKEN',
-    whatsapp_token: 'YOUR_WHATSAPP_API_TOKEN'
+    whatsapp_token: 'YOUR_WHATSAPP_API_TOKEN',
 });
 
-client.on('message', (ctx) => {
+client.on('message', async (ctx) => {
     console.log('New message received:', ctx.message);
     // Reply to the message
-    ctx.reply('We have received your message!');
+    await ctx.reply('We have received your message!');
 });
 
 client.start();
@@ -49,10 +50,6 @@ To use this library, you need to set up a webhook in your Meta application.
 2.  **Verify Token**: Use the same verify token that you provided in the `webhook_token` option.
 
 The library will automatically handle the webhook verification for you.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a pull request.
 
 
 ## License
